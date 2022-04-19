@@ -41,9 +41,11 @@ public class CarService {
     }
 
     public Car updateCar(int id, Car car) {
-        car.setId(id);
-        cars.add(id, car);
-        return car;
+        Car c = getCarById(id);
+        c.setBrand(car.getBrand());
+        c.setModel(car.getModel());
+        c.setRelease(car.getRelease());
+        return c;
     }
 
     public Car deleteCar(int id) {
